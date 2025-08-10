@@ -12,7 +12,7 @@ app.use(express.json());
 // use cors middleware also
 const cors = require("cors");
 app.use(cors({
-    origin:"https://virtialassistant.onrender.com",
+    origin:"https://virtialassistant-1.onrender.com",
     credentials:true
 }));
 // using the cookieparser middleware also
