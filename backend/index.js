@@ -15,6 +15,7 @@ app.use(cors({
     origin:"https://virtialassistant-1.onrender.com",
     credentials:true
 }));
+app.options("*", cors());
 // using the cookieparser middleware also
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
