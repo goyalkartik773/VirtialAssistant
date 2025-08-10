@@ -3,7 +3,7 @@ import axios from "axios";
 import { UserDataContext } from "./UserDataContext";
 
 function UserContext({ children }) {
-  const serverUrl = "http://localhost:8000";
+  const serverUrl = "https://virtialassistant-backend.onrender.com";
 
   const [userData, setUserData] = useState(null);
   const [frontendImage, setFrontendImage] = useState(null);
