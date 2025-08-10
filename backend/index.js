@@ -1,6 +1,7 @@
 // create the app server
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 // import the port no from env file
 require("dotenv").config();
