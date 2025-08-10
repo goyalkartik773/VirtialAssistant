@@ -9,13 +9,33 @@ const PORT = process.env.PORT || 3000;
 // use the body parser middleware
 app.use(express.json());
 
-// use cors middleware also
-const cors = require("cors");
+// // use cors middleware also
+// const cors = require("cors");
+// app.use(cors({
+//     origin:"https://virtialassistant-1.onrender.com",
+//     credentials:true
+// }));
+// app.options("*", cors());
+
+const allowedOrigins = [
+  "https://virtialassistant-1.onrender.com",
+  "http://localhost:3000", // optional for local dev
+];
+
+
 app.use(cors({
-    origin:"https://virtialassistant-1.onrender.com",
-    credentials:true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
-app.options("*", cors());
+
+app.options("*", cors()); // handle preflight
+
 // using the cookieparser middleware also
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
