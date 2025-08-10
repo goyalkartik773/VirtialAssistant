@@ -12,7 +12,7 @@ app.use(express.json());
 // use cors middleware also
 const cors = require("cors");
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://virtialassistant.onrender.com",
     credentials:true
 }));
 // using the cookieparser middleware also
